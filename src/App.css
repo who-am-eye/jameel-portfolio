@@ -1,0 +1,1780 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  background: #fff;
+  color: #171819;
+  overflow-x: hidden;
+}
+
+html, body {
+  /* Remove smooth scrolling */
+  overflow-y: auto;
+  height: 100%;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  background: #fff;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  padding-bottom: 40px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .main-grid {
+    padding: 0 20px;
+  }
+  
+  .main-content {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .project-page {
+    padding: 0 0px !important;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+  
+  .project-page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .project-page p {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  
+  /* Ensure consistent padding in all containers */
+  .carousel-container,
+  .photo-grid-container,
+  .vulnerability-content,
+  .research-papers-container,
+  [data-project] {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Reduce font sizes globally for mobile */
+  .main-content h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .main-content h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .main-content h3 {
+    font-size: 22px !important;
+  }
+  
+  .main-content p, 
+  .main-content .paragraph,
+  .main-content div:not(.icon):not(.svg):not([class*="image"]):not([class*="logo"]) {
+    font-size: 16px !important;
+  }
+  
+  /* Adjust card spacing */
+  .ProjectsGrid {
+    gap: 16px !important;
+  }
+  
+  /* Reduce vertical gaps */
+  .carousel-container, 
+  .images-container, 
+  .photo-grid-container {
+    gap: 12px !important;
+  }
+  
+  /* Reduce paddings */
+  .project-details, .about-section, .contact-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  /* Adjust section margins */
+  section, .section {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.project-page {
+  max-width: 900px;
+  margin: 40px auto 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.project-details {
+  width: 100%;
+  padding: 0 0px !important;
+}
+
+.project-page h1 {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #171819;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+
+.project-page p {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+}
+
+.project-gallery {
+  display: none;
+}
+
+.project-landing-image {
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-landing-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.back-button {
+  background: #171819;
+  color: white;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.back-button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .carousel-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-page h1 {
+    font-size: 32px;
+    line-height: 1.2 !important;
+  }
+}
+
+.about-grid {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Carousel styles */
+.carousel-container {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+  margin-bottom: 0px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 100%;
+}
+
+/* Specific styling for mindovertech carousel to make images bigger */
+[data-project="mindovertech"] .carousel-images {
+  width: 105%;
+  max-width: 105%;
+  margin-left: -5%;
+}
+
+.carousel-images.transitioning {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+.carousel-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: -40px;
+}
+
+.carousel-image:hover {
+  transform: scale(1.02);
+}
+
+.carousel-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;  
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.carousel-button {
+  background: transparent;
+  color: #171819;
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0;
+  outline: none;
+}
+
+.carousel-button:hover {
+  opacity: 0.7;
+}
+
+.carousel-button:focus {
+  outline: none;
+}
+
+.carousel-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot:hover {
+  background: #bbbbbb;
+}
+
+.carousel-dot.active {
+  background: #171819;
+  transform: scale(1.2);
+}
+
+/* Style for carousel images and landing image to ensure proper shadow display */
+.carousel-image, .project-landing-image {
+  padding: 10px;
+}
+
+/* Fix for button focus state in webkit browsers */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Add styles for the image modal */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-modal-content {
+  max-width: 95%;
+  max-height: 95%;
+  position: relative;
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+/* Style the close button in the modal */
+.image-modal-close {
+  display: block;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.image-modal-close:hover {
+  opacity: 1;
+}
+
+/* Carousel single image mode for tall, narrow images */
+.carousel-images.single-image-mode {
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+.carousel-images.single-image-mode .carousel-image {
+  margin-top: 0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.carousel-images.single-image-mode img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Specific styling for hive project with top/bottom controls */
+[data-project="hive"] .carousel-container {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: visible;
+  position: relative;
+  margin-top: -10px;
+}
+
+[data-project="hive"] .carousel-controls {
+  margin-top: 0;
+  margin-bottom: 10px;
+  position: static;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+  pointer-events: auto;
+}
+
+[data-project="hive"] .carousel-button {
+  background: transparent;
+  padding: 10px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+}
+
+[data-project="hive"] .carousel-button:hover {
+  opacity: 0.7;
+}
+
+/* Adjust spacing for paragraph above carousel */
+[data-project="hive"] p {
+  margin-bottom: 15px;
+}
+
+/* Add bottom controls */
+[data-project="hive"] .carousel-bottom-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Vulnerability write-up specific styles */
+.vulnerability-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0;
+}
+
+.vulnerability-content h2 {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #171819;
+}
+
+.vulnerability-content h3 {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #171819;
+}
+
+.vulnerability-content p {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.vulnerability-content ul, 
+.vulnerability-content ol {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.vulnerability-content li {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.vulnerability-content section {
+  margin-bottom: 40px;
+}
+
+/* Code block styling */
+.code-block-container {
+  margin: 20px 0 30px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  background: #1e1e1e;
+}
+
+/* Remove the header styling since we're not using it anymore */
+.code-block-header {
+  display: none;
+}
+
+.vulnerability-content code {
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 14px;
+  color: #d63384;
+}
+
+/* Super aggressive styling to eliminate white backgrounds */
+.vulnerability-content pre,
+.vulnerability-content pre * {
+  background: #1e1e1e !important;
+}
+
+.vulnerability-content pre code,
+.vulnerability-content pre code span,
+.vulnerability-content pre span,
+.vulnerability-content pre div {
+  background: transparent !important;
+}
+
+/* Override specific syntax highlighter elements */
+.vulnerability-content pre .linenumber,
+.vulnerability-content pre .react-syntax-highlighter-line-number {
+  color: #6a737d !important;
+  opacity: 0.6 !important;
+  background: transparent !important;
+  display: inline-block !important;
+  padding-top: 0 !important;
+  vertical-align: middle !important;
+  line-height: inherit !important;
+}
+
+/* Target specific line backgrounds */
+.vulnerability-content pre .react-syntax-highlighter-line {
+  background: #1e1e1e !important;
+}
+
+/* Make code blocks responsive */
+@media (max-width: 768px) {
+  .vulnerability-content pre {
+    font-size: 12px !important;
+  }
+  
+  .vulnerability-content code {
+    word-break: break-word;
+  }
+  
+  /* Add these new mobile-specific styles for the vulnerability content */
+  .vulnerability-content,
+  [data-project="vulnerability"] .vulnerability-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    overflow-x: hidden !important;
+  }
+  
+  .vulnerability-content p,
+  .vulnerability-content li,
+  .vulnerability-content code {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .vulnerability-content h3 {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    margin-top: 20px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .vulnerability-content section {
+    margin-bottom: 24px !important;
+  }
+  
+  .vulnerability-content .code-block-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+}
+
+[data-project="vulnerability"] {
+  padding: 0 20px;
+}
+
+[data-project="vulnerability"] h1 {
+  padding-left: 0;
+  margin-left: 0;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+/* Add media query for mobile styling */
+@media (max-width: 768px) {
+  [data-project="vulnerability"] {
+    padding: 0 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  [data-project="vulnerability"] h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    margin: 0 auto 20px !important;
+  }
+}
+
+/* Research paper specific styles */
+.research-papers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  margin: 30px 0;
+}
+
+/* Adjust size for Security Threats & Cryptography Paper title */
+[data-project="research-paper"] h1 {
+  font-size: 42px;
+}
+
+.research-paper-item {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.research-paper-item:hover {
+  transform: translateY(-5px);
+}
+
+.research-paper-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.pdf-hover-link {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.pdf-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pdf-hover-link:hover .pdf-hover-overlay {
+  opacity: 1;
+}
+
+.pdf-hover-overlay span {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+/* Make research paper images responsive */
+@media (max-width: 768px) {
+  .research-papers-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Photography page - column layout */
+.photo-grid-container {
+  display: flex;
+  width: calc(100vw - 40px);
+  margin: 0;
+  padding: 20px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  gap: 16px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+    flex-direction: column; /* Change to column layout on mobile */
+  }
+}
+
+.photo-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  @media (max-width: 768px) {
+    /* For mobile, make sure the single column takes full width */
+    width: 100%;
+  }
+}
+
+.photo-grid-item {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger animation delay for items */
+.photo-column:nth-child(1) .photo-grid-item:nth-child(1) { animation-delay: 0.1s; }
+.photo-column:nth-child(1) .photo-grid-item:nth-child(2) { animation-delay: 0.2s; }
+.photo-column:nth-child(1) .photo-grid-item:nth-child(3) { animation-delay: 0.3s; }
+.photo-column:nth-child(1) .photo-grid-item:nth-child(4) { animation-delay: 0.4s; }
+
+.photo-column:nth-child(2) .photo-grid-item:nth-child(1) { animation-delay: 0.15s; }
+.photo-column:nth-child(2) .photo-grid-item:nth-child(2) { animation-delay: 0.25s; }
+.photo-column:nth-child(2) .photo-grid-item:nth-child(3) { animation-delay: 0.35s; }
+.photo-column:nth-child(2) .photo-grid-item:nth-child(4) { animation-delay: 0.45s; }
+
+.photo-column:nth-child(3) .photo-grid-item:nth-child(1) { animation-delay: 0.2s; }
+.photo-column:nth-child(3) .photo-grid-item:nth-child(2) { animation-delay: 0.3s; }
+.photo-column:nth-child(3) .photo-grid-item:nth-child(3) { animation-delay: 0.4s; }
+.photo-column:nth-child(3) .photo-grid-item:nth-child(4) { animation-delay: 0.5s; }
+
+/* Define the fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-grid-item:hover {
+  transform: scale(1.02);
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Updated styles for single column layout on mobile */
+@media (max-width: 768px) {
+  /* Modify the photo-grid-container to be a single column */
+  .photo-grid-container {
+    display: block; /* Change to block display */
+    width: 100%;
+  }
+  
+  /* Make all columns full width and keep them visible */
+  .photo-column {
+    width: 100% !important;
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+  
+  /* Don't hide the second and third columns anymore */
+  .photo-column:nth-child(2),
+  .photo-column:nth-child(3) {
+    display: flex; /* Keep them displayed */
+  }
+  
+  /* Change animation delays for more fluid scrolling */
+  .photo-column:nth-child(1) .photo-grid-item:nth-child(1) { animation-delay: 0.05s; }
+  .photo-column:nth-child(1) .photo-grid-item:nth-child(2) { animation-delay: 0.1s; }
+  .photo-column:nth-child(1) .photo-grid-item:nth-child(3) { animation-delay: 0.15s; }
+  .photo-column:nth-child(1) .photo-grid-item:nth-child(4) { animation-delay: 0.2s; }
+  
+  .photo-column:nth-child(2) .photo-grid-item:nth-child(1) { animation-delay: 0.25s; }
+  .photo-column:nth-child(2) .photo-grid-item:nth-child(2) { animation-delay: 0.3s; }
+  .photo-column:nth-child(2) .photo-grid-item:nth-child(3) { animation-delay: 0.35s; }
+  .photo-column:nth-child(2) .photo-grid-item:nth-child(4) { animation-delay: 0.4s; }
+  
+  .photo-column:nth-child(3) .photo-grid-item:nth-child(1) { animation-delay: 0.45s; }
+  .photo-column:nth-child(3) .photo-grid-item:nth-child(2) { animation-delay: 0.5s; }
+  .photo-column:nth-child(3) .photo-grid-item:nth-child(3) { animation-delay: 0.55s; }
+  .photo-column:nth-child(3) .photo-grid-item:nth-child(4) { animation-delay: 0.6s; }
+}
+
+[data-project="music-project"] .audio-title {
+  color: #171819;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+[data-project="music-project"] .audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+[data-project="music-project"] .play-pause-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #171819;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+[data-project="music-project"] .play-pause-btn:hover {
+  opacity: 0.9;
+}
+
+[data-project="music-project"] .progress-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+[data-project="music-project"] .progress-bar-wrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+[data-project="music-project"] .progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #E0E0E0;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+[data-project="music-project"] .progress-bar:before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+[data-project="music-project"] .progress {
+  height: 100%;
+  background-color: #171819;
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+[data-project="music-project"] .time-display {
+  font-size: 14px;
+  color: #666666;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  min-width: 85px;
+  margin-right: 8px;
+  text-align: right;
+}
+
+[data-project="music-project"] .volume-control {
+  position: relative;
+  color: #171819;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+[data-project="music-project"] .volume-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-project="music-project"] .volume-slider-container {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 60px;
+  background: none;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+}
+
+[data-project="music-project"] .volume-control:hover .volume-slider-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-project="music-project"] .volume-slider {
+  width: 6px;
+  height: 50px;
+  background-color: #E0E0E0;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+[data-project="music-project"] .volume-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #171819;
+  border-radius: 2px;
+}
+
+/* Hidden volume controls from audio element */
+[data-project="music-project"] .volume-container {
+  display: none;
+}
+
+/* For Instagram embed responsiveness */
+[data-project="music-project"] .instagram-embed-container iframe {
+  max-width: 100% !important;
+}
+
+/* Make Instagram embed smaller */
+[data-project="music-project"] .instagram-embed-container {
+  max-width: 500px;
+  margin: 0 auto;
+  transform: scale(0.9);
+  transform-origin: left top;
+}
+
+/* Mobile-specific Instagram embed styles */
+@media (max-width: 768px) {
+  [data-project="music-project"] .instagram-embed-container {
+    transform: scale(0.9);
+    transform-origin: center top;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Bullet points styling for Hive project */
+.bullet-points-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.bullet-points-row {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.bullet-points-row li {
+  position: relative;
+  padding-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.bullet-points-row li:before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .bullet-points-row {
+    flex-direction: column;
+  }
+  
+  .bullet-points-row li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Crochet project styles */
+[data-project="crochet"] .images-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0 100px 0;
+  align-items: center;
+  height: 650px;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+[data-project="crochet"] .image-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+}
+
+[data-project="crochet"] .image-wrapper img {
+  max-height: 800px;
+  width: 100%;
+  height: 800px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Mobile styles for crochet project */
+@media (max-width: 768px) {
+  [data-project="crochet"] .images-container {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+  }
+
+  [data-project="crochet"] .image-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  [data-project="crochet"] .image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+}
+
+/* Video styling for Aab collection */
+.video-grid-item {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  margin-bottom: 16px;
+}
+
+.video-grid-item:hover {
+  transform: scale(1.02);
+}
+
+/* Styling for autoplay videos */
+.autoplay-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none; /* Prevents right-click and other interactions */
+}
+
+/* Show controls only on hover */
+.video-grid-item:hover .autoplay-video {
+  pointer-events: auto; /* Re-enable interactions on hover */
+}
+
+/* Prevent context menu on videos */
+.video-grid-item video {
+  position: relative;
+}
+
+.video-grid-item video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+/* Add stylish play controls that appear on hover */
+.video-grid-item {
+  position: relative;
+}
+
+.video-grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Play icon for videos that are playing */
+.video-grid-item::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Pause icon for videos that are paused */
+.video-grid-item.video-paused::after {
+  content: "❚❚";
+  letter-spacing: -2px;
+}
+
+.video-grid-item:hover::before,
+.video-grid-item:hover::after {
+  opacity: 1;
+}
+
+/* Adjust layout for Aab Collection page */
+[data-project="photography-aab"] .photo-grid-container {
+  /* Keep standard 3-column layout - no special styling */
+}
+
+[data-project="photography-aab"] .photo-column {
+  /* Use standard column styling */
+}
+
+/* Make videos simple without rounded corners or shadows */
+[data-project="photography-aab"] .video-grid-item {
+  margin-bottom: 16px;
+  overflow: hidden;
+  transform: none;
+  transition: transform 0.3s ease;
+}
+
+[data-project="photography-aab"] .video-grid-item:hover {
+  transform: scale(1.02);
+  box-shadow: none;
+}
+
+[data-project="photography-aab"] .autoplay-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* Mobile styles for Aab Collection videos - disable interactions and animations */
+@media (max-width: 768px) {
+  [data-project="photography-aab"] .video-grid-item {
+    transform: none;
+    transition: none;
+  }
+  
+  [data-project="photography-aab"] .video-grid-item:hover {
+    transform: none;
+  }
+  
+  [data-project="photography-aab"] .video-grid-item::before,
+  [data-project="photography-aab"] .video-grid-item::after {
+    display: none;
+  }
+  
+  [data-project="photography-aab"] .autoplay-video {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+/* Ensure images don't overflow their containers on mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional mobile styles for project detail pages */
+@media (max-width: 768px) {
+  /* Target the project detail pages with more specific selectors */
+  .project-page {
+    padding: 0 0px !important; /* Match About page padding */
+    box-sizing: border-box;
+  }
+  
+  .project-details {
+    padding: 0 0px !important; /* Match About page padding */
+  }
+  
+  .project-page h1,
+  .project-details h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .project-page h2,
+  .project-details h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .project-page h3,
+  .project-details h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .project-page p,
+  .project-details p {
+    font-size: 16px !important; /* Match About page paragraph size */
+    margin-bottom: 16px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .project-page .project-landing-image,
+  .project-details .project-landing-image {
+    margin: 16px auto 24px !important;
+  }
+  
+  .project-page .vulnerability-content,
+  .project-details .vulnerability-content {
+    padding: 0 15px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Make code blocks display properly on vulnerability page */
+  [data-project="vulnerability"] .code-block-container,
+  .vulnerability-content .code-block-container {
+    margin: 15px 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  [data-project="vulnerability"] code,
+  .vulnerability-content code {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: pre-wrap !important;
+    font-size: 14px !important;
+  }
+
+  [data-project="vulnerability"] pre,
+  .vulnerability-content pre {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Reduce other padding/margins on project pages */
+  .project-page .carousel-container,
+  .project-details .carousel-container {
+    margin-bottom: 24px !important;
+  }
+  
+  .project-page .images-container,
+  .project-details .images-container,
+  .project-page .photo-grid-container,
+  .project-details .photo-grid-container,
+  .project-page .research-papers-container,
+  .project-details .research-papers-container {
+    margin: 24px auto !important;
+    padding: 0 !important;
+    gap: 20px !important; /* Increased row gap */
+  }
+  
+  /* Make audio players more compact */
+  .project-page [data-project="music-project"] .audio-player-container,
+  .project-details [data-project="music-project"] .audio-player-container {
+    padding: 16px 0 !important;
+    margin: 20px 0 !important;
+  }
+  
+  /* Adjust bullet point lists */
+  .project-page .bullet-points-container,
+  .project-details .bullet-points-container {
+    margin: 16px 0 !important;
+    padding: 0 !important;
+  }
+  
+  .project-page .bullet-points-row,
+  .project-details .bullet-points-row {
+    margin-bottom: 12px !important;
+  }
+  
+  .project-page .bullet-points-row li,
+  .project-details .bullet-points-row li {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Make code blocks more compact */
+  .project-page .code-block-container,
+  .project-details .code-block-container {
+    margin: 20px 0 !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+  
+  /* Increase row spacing throughout */
+  .project-page section,
+  .project-details section {
+    margin-bottom: 28px !important;
+  }
+  
+  /* Ensure content doesn't overflow */
+  .project-page .project-details,
+  .project-details {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Ensure all text elements are properly sized */
+.project-page span,
+.project-details span,
+.project-page .text,
+.project-details .text,
+.project-page .caption,
+.project-details .caption,
+.project-page .time-display,
+.project-details .time-display,
+.project-page .audio-title,
+.project-details .audio-title,
+.project-page small,
+.project-details small,
+.project-page li,
+.project-details li {
+  font-size: 16px !important;
+}
+
+/* Smaller text elements */
+.project-page .image-caption,
+.project-details .image-caption,
+.project-page .subtitle-small,
+.project-details .subtitle-small,
+.project-page .footnote,
+.project-details .footnote {
+  font-size: 14px !important;
+}
+
+/* Increase row gap for grids and flex containers */
+.project-page [class*="grid"],
+.project-details [class*="grid"],
+.project-page [class*="container"],
+.project-details [class*="container"] {
+  row-gap: 20px !important;
+}
+
+/* Hide M Huncho image and caption on mobile for music project page */
+@media (max-width: 768px) {
+  [data-project="music-project"] .images-container .image-wrapper:nth-child(2) {
+    display: none !important;
+  }
+  
+  /* Adjust the remaining image to be centered with reduced spacing */
+  [data-project="music-project"] .images-container {
+    justify-content: center !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  
+  [data-project="music-project"] .images-container .image-wrapper:first-child {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+  
+  [data-project="music-project"] .images-container .image-wrapper:first-child img {
+    height: auto !important;
+    max-height: none !important;
+    margin-bottom: 0 !important;
+  }
+  
+  [data-project="music-project"] .image-caption {
+    margin-top: 2px !important;
+    margin-bottom: 5px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    color: #666 !important;
+  }
+  
+  /* Reduce spacing between paragraphs and image */
+  [data-project="music-project"] p + .images-container {
+    margin-top: 5px !important;
+  }
+  
+  [data-project="music-project"] .images-container + p {
+    margin-top: 5px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Apply more compact styling to music project page on mobile */
+@media (max-width: 768px) {
+  [data-project="music-project"] {
+    padding: 0 15px !important;
+  }
+  
+  [data-project="music-project"] h1 {
+    margin-bottom: 12px !important;
+  }
+  
+  [data-project="music-project"] p {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.4 !important;
+  }
+  
+  [data-project="music-project"] .audio-player-container {
+    margin: 12px 0 !important;
+    padding: 12px 0 !important;
+  }
+  
+  [data-project="music-project"] .audio-title {
+    font-size: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  [data-project="music-project"] .audio-controls {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  /* Hide volume controls on mobile */
+  [data-project="music-project"] .volume-control {
+    display: none !important;
+  }
+  
+  /* Make time display smaller on mobile */
+  [data-project="music-project"] .time-display {
+    font-size: 12px !important;
+    min-width: 70px !important;
+    margin-right: 0 !important;
+    text-align: right !important;
+  }
+  
+  /* Extend progress bar on mobile to fill space left by removed volume controls */
+  [data-project="music-project"] .progress-container {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    gap: 8px !important; /* Reduce gap to make more space for progress bar */
+  }
+  
+  [data-project="music-project"] .progress-bar-wrapper {
+    flex-grow: 1 !important;
+  }
+  
+  /* Add a bit of spacing above the Instagram container */
+  [data-project="music-project"] .instagram-embed-container {
+    margin-top: 15px !important;
+  }
+  
+  /* Hide image caption on mobile for Trapboy Freddy page */
+  [data-project="music-project"] > div > .image-caption {
+    display: none !important;
+  }
+  
+  /* Zion Foster page mobile layout adjustments */
+  .project-details[data-project="music-project"] > div[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .project-details[data-project="music-project"] > div[style*="display: flex"] > div[style*="width: 300px"] {
+    width: 100% !important;
+  }
+  
+  .project-details[data-project="music-project"] > div[style*="display: flex"] .image-caption {
+    text-align: left !important;
+  }
+}
+
+/* Smaller headers on mobile across all pages */
+@media (max-width: 768px) {
+  /* Main page headers */
+  h1, 
+  .project-page h1,
+  .project-details h1,
+  .about-section h1,
+  .contact-container h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Hero typing animation - larger size just for this element */
+  .main-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Make the animation container flexible for sizing */
+  .animated-text-container {
+    min-height: 32px !important;
+    font-size: 32px !important;
+  }
+  
+  /* Ensure all second level headers are also smaller */
+  h2,
+  .project-page h2,
+  .project-details h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Ensure subtitle sizes are consistent */
+  .subtitle {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Position the full page to fill entire viewport */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Reset all containers for photography page */
+.app-container {
+  overflow: visible;
+}
+
+/* Adjust footer spacing for mobile */
+@media (max-width: 768px) {
+  .FooterWrapper {
+    margin-top: 40px !important; /* Reduce spacing on mobile */
+  }
+}
+
+[data-project="photography-people-and-places"] .main-grid,
+.project-page[data-project="photography-people-and-places"],
+[data-project="photography-people-and-places"],
+[data-project="photography-people-and-places"] .project-details,
+[data-project="photography-wildlife"] .main-grid,
+.project-page[data-project="photography-wildlife"],
+[data-project="photography-wildlife"],
+[data-project="photography-wildlife"] .project-details,
+[data-project="photography-aab"] .main-grid,
+.project-page[data-project="photography-aab"],
+[data-project="photography-aab"],
+[data-project="photography-aab"] .project-details {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+/* Hide the photography pages heading entirely */
+[data-project="photography-people-and-places"] h1,
+[data-project="photography-wildlife"] h1,
+[data-project="photography-aab"] h1 {
+  display: none; /* Completely hide the headings */
+}
+
+/* Updated styles for single column layout on mobile */
+@media (max-width: 768px) {
+  /* Hide second and third columns on mobile */
+  .photo-column:nth-child(2),
+  .photo-column:nth-child(3) {
+    display: none;
+  }
+  
+  /* Move all images to the first column */
+  .photo-column:first-child {
+    width: 100%;
+  }
+  
+  /* Reset animation delays for single column */
+  .photo-column:nth-child(1) .photo-grid-item:nth-child(n) {
+    animation-delay: calc(0.1s * var(--index, 1));
+  }
+}
+
+/* Add specific music project page styles for desktop */
+[data-project="music-project"] .images-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  width: 100%;
+}
+
+[data-project="music-project"] .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+[data-project="music-project"] .image-wrapper img {
+  height: 350px;
+  width: auto;
+  object-fit: scale-down;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+[data-project="music-project"] .image-caption {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #999999;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* Audio player container styling */
+[data-project="music-project"] .audio-player-container {
+  margin: 30px 0;
+  padding: 20px 0;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-project="music-project"] .custom-audio-player {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Mobile-specific carousel adjustments for specific projects */
+@media (max-width: 768px) {
+  [data-project="smartwaste"] .carousel-container,
+  [data-project="mindovertech"] .carousel-container {
+    margin-top: 40px !important;
+    margin-bottom: 0px !important;
+  }
+}
